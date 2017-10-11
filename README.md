@@ -1,2 +1,2 @@
-# docker-ci-helm
+# docker CI Helm
 Helm Docker image
