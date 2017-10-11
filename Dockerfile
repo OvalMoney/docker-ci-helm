@@ -10,4 +10,4 @@ ADD http://storage.googleapis.com/kubernetes-helm/${HELM_PACKAGE_NAME} ./
 
 RUN tar -xvf ${HELM_PACKAGE_NAME} \
  && mv linux-amd64/helm /usr/local/bin \
- && rm -f ${HELM_PACKAGE_NAME} linux-amd64/
+ && rm -rf ${HELM_PACKAGE_NAME} linux-amd64/
