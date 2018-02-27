@@ -11,7 +11,8 @@ RUN apk --no-cache add \
       bash \
       make \
       curl \
-      git
+      git \
+      openssh-client
 
 ADD http://storage.googleapis.com/kubernetes-helm/${HELM_PACKAGE_NAME} ./
 
