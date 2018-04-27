@@ -3,9 +3,9 @@ FROM alpine:3.6
 # Metadata
 LABEL org.label-schema.vcs-url="https://github.com/OvalMoney/docker-ci-helm"
 
-ENV HELM_LATEST_VERSION v2.8.1
-ENV HELM_PACKAGE_NAME helm-${HELM_LATEST_VERSION}-linux-amd64.tar.gz
-ENV HELM_S3_VERSION 0.5.2
+ENV VERSION v2.9.0
+ENV PACKAGE_NAME helm-${VERSION}-linux-amd64.tar.gz
+ENV HELM_S3_VERSION 0.6.1
 
 RUN apk --no-cache add \ 
       bash \
@@ -14,11 +14,11 @@ RUN apk --no-cache add \
       git \
       openssh-client
 
-ADD http://storage.googleapis.com/kubernetes-helm/${HELM_PACKAGE_NAME} ./
+ADD http://storage.googleapis.com/kubernetes-helm/${PACKAGE_NAME} ./
 
-RUN tar -xvf ${HELM_PACKAGE_NAME} \
+RUN tar -xvf ${PACKAGE_NAME} \
  && mv linux-amd64/helm /usr/local/bin \
- && rm -rf ${HELM_PACKAGE_NAME} linux-amd64/
+ && rm -rf ${PACKAGE_NAME} linux-amd64/
 
 RUN helm init --client-only
 
