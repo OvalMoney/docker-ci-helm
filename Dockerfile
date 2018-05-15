@@ -3,7 +3,7 @@ FROM alpine:3.6
 # Metadata
 LABEL org.label-schema.vcs-url="https://github.com/OvalMoney/docker-ci-helm"
 
-ENV VERSION v2.9.0
+ENV VERSION v2.9.1
 ENV PACKAGE_NAME helm-${VERSION}-linux-amd64.tar.gz
 ENV HELM_S3_VERSION 0.6.1
 
