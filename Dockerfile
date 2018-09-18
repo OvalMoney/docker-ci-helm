@@ -3,9 +3,10 @@ FROM alpine:3.6
 # Metadata
 LABEL org.label-schema.vcs-url="https://github.com/OvalMoney/docker-ci-helm"
 
-ENV VERSION v2.9.1
-ENV PACKAGE_NAME helm-${VERSION}-linux-amd64.tar.gz
-ENV HELM_S3_VERSION 0.6.1
+ENV KUBECTL_VERSION v1.11.3
+ENV HELM_VERSION v2.9.1
+ENV PACKAGE_NAME helm-${HELM_VERSION}-linux-amd64.tar.gz
+ENV HELM_S3_VERSION 0.7.0
 
 RUN apk --no-cache add \ 
       bash \
@@ -13,6 +14,10 @@ RUN apk --no-cache add \
       curl \
       git \
       openssh-client
+
+ADD https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/kubectl
 
 ADD http://storage.googleapis.com/kubernetes-helm/${PACKAGE_NAME} ./
 
