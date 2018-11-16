@@ -13,7 +13,8 @@ RUN apk --no-cache add \
       make \
       curl \
       git \
-      openssh-client
+      openssh-client \
+      jq
 
 ADD https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/
 
