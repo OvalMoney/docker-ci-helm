@@ -5,6 +5,12 @@
 
 Helm Docker image 
 
+## What's inside
+
+* helm
+* helm-s3
+* kubectl
+
 ## Requirements
 
 Credentials must be set using kubeconfig file `~/.kube/config`
