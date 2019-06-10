@@ -4,7 +4,7 @@ FROM alpine:3.7
 LABEL org.label-schema.vcs-url="https://github.com/OvalMoney/docker-ci-helm"
 
 ENV KUBECTL_VERSION v1.13.0
-ENV HELM_VERSION v2.11.0
+ENV HELM_VERSION v2.14.1
 ENV PACKAGE_NAME helm-${HELM_VERSION}-linux-amd64.tar.gz
 ENV HELM_S3_VERSION 0.8.0
 
