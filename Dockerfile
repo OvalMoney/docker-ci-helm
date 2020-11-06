@@ -22,7 +22,7 @@ RUN curl -SL https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
 #Install Helm
 RUN curl -SL https://get.helm.sh/${PACKAGE_NAME} \
  | tar -xzv --strip-components=1 -C /usr/local/bin linux-amd64/helm \
- && helm init --client-only
+ && helm repo add stable https://charts.helm.sh/stable
 
 # Install Helm Plugin
 RUN helm plugin install https://github.com/hypnoglow/helm-s3.git --version $HELM_S3_VERSION
